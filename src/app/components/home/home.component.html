@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="#">HALO PETS</a>
+  
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="mostrarAdmin">
+          <a class="nav-link" routerLink='/articles' href="#">Register Articles</a>
+        </li>
+        <li class="nav-item" *ngIf="mostrarBuyer">
+            <a class="nav-link" routerLink="/shop">Buy</a>
+          </li>
+  
+        <li class="nav-item" *ngIf="mostrarAdmin">
+            <a class="nav-link" routerLink="/querys">Querys</a>
+          </li>
+        
+        
+      </ul>
+  
+    </div>
+    <div class="float-right">
+        <button class="btn btn-secondary" type="button" (click)="salir()">salir</button>
+    </div>
+  </nav>  
+
+  <div class="conatiner h-75 w-75 p-1 m-1 mx-auto">
+    <img src="assets/Imgs/Halopets.png" />
+  </div>

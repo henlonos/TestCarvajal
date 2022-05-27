@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="#">HALO PETS</a>
+  
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/home'>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="mostrarAdmin">
+          <a class="nav-link" routerLink='/articles' href="#">Register Articles</a>
+        </li>
+        <li class="nav-item" *ngIf="mostrarBuyer">
+            <a class="nav-link" routerLink="/shop">Buy</a>
+          </li>
+  
+        <li class="nav-item" *ngIf="mostrarAdmin">
+            <a class="nav-link" routerLink="/querys">Querys</a>
+          </li>
+        
+        
+      </ul>
+  
+    </div>
+    <div class="float-right">
+        <button class="btn btn-secondary" type="button" (click)="salir()">salir</button>
+    </div>
+  </nav>  
+
+  <form [formGroup]="form" *ngIf="mostrarAdmin" (ngSubmit)="addProduct(form)">
+      <div class="container w-75 p-5 m-4 mx-auto">
+    
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name Product</label>
+        <input type="text" required class="form-control" formControlName="nameproduct" id="nameProduct" aria-describedby="emailHelp" placeholder="Name Product">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input type="text" required class="form-control" id="description" formControlName="description" aria-describedby="emailHelp" placeholder="Description Product">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Price</label>
+        <input type="number" required class="form-control" id="price" formControlName="price" aria-describedby="emailHelp" placeholder="Price">
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Number Items</label>
+      <input type="number" required class="form-control" id="exampleInputPassword1" formControlName="items" placeholder="Number Items">
+    </div>
+
+    
+    <div class="form-group">
+        <label for="example">Image</label>
+        <input type="file" required class="form-control" (change)="onChange($event)" formControlName="image" id="Image">
+      
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
